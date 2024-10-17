@@ -8,14 +8,19 @@
     <title>Lista de Tarefas</title>
   </head>
   <body>
-    <div class="header">
-      <h2>Lista de Tarefas</h2>
-      <input type="text" id="tarefa" placeholder="Informe a tarefa" />
+    <header class="head">
+      <h1>Lista de Tarefas</h1>
+
+      <input type="text" id="tarefa" placeholder="Informe a tarefa"/>
+
       <span onclick="addElemento()" class="addBtn">Incluir</span>
+    </header>
+    
+    <ul id="itemLista"></ul>
+    
+    <div class="b2">
+      <span onclick="limparLista()" class="addBtn2">Limpar Lista</span>
     </div>
-    <ul id="itemLista">
-    </ul>
-    <div class="b2"><span onclick="limparLista()" class="addBtn2">Limpar Lista</span></div>
     
     <script src="script.js"></script>
   </body>
