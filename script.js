@@ -35,7 +35,7 @@ let minhaLista = document.getElementsByTagName("li");
     function addElemento() {
       let inputValue = document.getElementById("tarefa").value.toUpperCase();
       if (inputValue === "") {
-        alert("Você precisa descrever a tarefa");
+        alert("Nenhuma tarefa informada");
         return;
       }
       // mostra a data que a tarefa foi adicionada
@@ -64,7 +64,7 @@ let minhaLista = document.getElementsByTagName("li");
       span.onclick = function () {
         let div = this.parentElement;
         let id = parseInt(div.getAttribute('data-id'));
-        removerTarefaDoLocalStorage(id);
+        removerDoLocalStorage(id);
         div.style.display = "none";
       };
 
@@ -88,12 +88,12 @@ let minhaLista = document.getElementsByTagName("li");
 
           // Atualiza o localStorage após a edição
           let id = parseInt(div.getAttribute('data-id'));
-          atualizarTarefaNoLocalStorage(id, novoTexto);
+          atualizarNoLocalStorage(id, novoTexto);
         }
       }
     }
 
-    function removerTarefaDoLocalStorage(id) {
+    function removerDoLocalStorage(id) {
       let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
       tarefas = tarefas.filter(tarefa => tarefa.id !== id);
       localStorage.setItem("tarefas", JSON.stringify(tarefas));
